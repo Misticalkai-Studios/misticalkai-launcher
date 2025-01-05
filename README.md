@@ -1,2 +1,2 @@
 # misticalkai-launcher
-The official Misticalkai game launcher.
+This is the official Misticalkai Studio's game launcher where you can download my game's from!
