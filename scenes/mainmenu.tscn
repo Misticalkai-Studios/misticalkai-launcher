@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3cghictte8em"]
+
+[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_xxkty"]
+[ext_resource type="Theme" uid="uid://2obore3x40q6" path="res://theme/background.tres" id="2_dche8"]
+[ext_resource type="Theme" uid="uid://gaf2d72fdycj" path="res://theme/accent_header.tres" id="3_3x3xm"]
+[ext_resource type="Theme" uid="uid://canpw8e8e7yrt" path="res://theme/accent_menu.tres" id="4_h4npx"]
+[ext_resource type="Theme" uid="uid://b32jfcxa6esii" path="res://theme/button.tres" id="4_s0m42"]
+[ext_resource type="Theme" uid="uid://d0ael075a82xo" path="res://theme/exit_button.tres" id="6_3hpta"]
+[ext_resource type="Texture2D" uid="uid://u3xbtem6reux" path="res://assets/Close_SM.png" id="7_spfif"]
+[ext_resource type="Theme" uid="uid://b3eb1oilq2tjs" path="res://theme/minimize_button.tres" id="8_2o4pc"]
+[ext_resource type="Texture2D" uid="uid://d0w842sdeddry" path="res://assets/Remove_Minus.png" id="9_e4vxq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqinp"]
+font_size = 10
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xxkty")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme = ExtResource("2_dche8")
+
+[node name="AccentHeader" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 64.0
+theme = ExtResource("3_3x3xm")
+
+[node name="AccentMenu" type="Panel" parent="AccentHeader"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 88.0
+offset_right = 192.0
+offset_bottom = 624.0
+theme = ExtResource("4_h4npx")
+
+[node name="Play_DownloadButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 544.0
+offset_right = 848.0
+offset_bottom = 624.0
+tooltip_text = "Download Lost Stray"
+theme = ExtResource("4_s0m42")
+text = "Download
+5 GB"
+expand_icon = true
+
+[node name="exit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1104.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 48.0
+theme = ExtResource("6_3hpta")
+icon = ExtResource("7_spfif")
+icon_alignment = 1
+expand_icon = true
+
+[node name="minimize_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 16.0
+offset_right = 1096.0
+offset_bottom = 48.0
+theme = ExtResource("8_2o4pc")
+icon = ExtResource("9_e4vxq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 592.0
+offset_right = 192.0
+offset_bottom = 623.0
+text = "© 2025 Misticalkai Studio's"
+label_settings = SubResource("LabelSettings_nqinp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="AccentHeader" to="." method="_on_accent_gui_input"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="minimize_button" to="." method="_on_minimize_button_pressed"]
