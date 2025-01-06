@@ -107,8 +107,9 @@ func _ready() -> void:
 	add_command("/clear", clear, 0, 0, "Clears the text on the console.")
 	add_command("/delete_history", delete_history, 0, 0, "Deletes the history of previously entered commands.")
 	add_command("/help", help, 0, 0, "Displays instructions on how to use the console.")
-	add_command("/commands_list", commands_list, 0, 0, "Lists all commands and their descriptions.")
+	add_command("/command_list", command_list, 0, 0, "Lists all commands and their descriptions.")
 	add_command("/commands", commands, 0, 0, "Lists commands with no descriptions.")
+	add_command("/download", download, 0, 0, "Download a game or a game's version from console. (/download <game_name> <version>)")
 
 func _input(event : InputEvent) -> void:
 	if (event is InputEventKey):
@@ -350,6 +351,10 @@ func clear() -> void:
 	rich_label.clear()
 
 
+func download() -> void:
+	rich_label.append_text("Coming soon.")
+
+
 func delete_history() -> void:
 	console_history.clear()
 	console_history_index = 0
@@ -363,6 +368,7 @@ func help() -> void:
 		[color=light_green]/commands_list[/color]: Shows a detailed list of all the currently registered commands
 		[color=light_green]/delete_hystory[/color]: Deletes the commands history
 		[color=light_green]/quit[/color]: Exits the launcher
+		[color=light_green]/download[/color]: Download a game or a certain version (/download <game_name> <version>)
 	Controls:
 		[color=light_blue]Up[/color] and [color=light_blue]Down[/color] arrow keys to navigate commands history
 		[color=light_blue]PageUp[/color] and [color=light_blue]PageDown[/color] to scroll registry
@@ -393,7 +399,7 @@ func commands() -> void:
 	rich_label.append_text(str(commands) + "\n\n")
 
 
-func commands_list() -> void:
+func command_list() -> void:
 	var commands := []
 	for command in console_commands:
 		commands.append(str(command))
