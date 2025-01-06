@@ -78,11 +78,11 @@ func _enter_tree() -> void:
 	rich_label.anchor_bottom = 0.5
 	rich_label.add_theme_stylebox_override("normal", style)
 	control.add_child(rich_label)
-	rich_label.append_text("Misticalkai Studio's Dev Console.\n")
+	rich_label.append_text("Misticalkai Studio's Console.\n")
 	line_edit.anchor_top = 0.5
 	line_edit.anchor_right = 1.0
 	line_edit.anchor_bottom = 0.5
-	line_edit.placeholder_text = "Enter \"/help\" for instructions"
+	line_edit.placeholder_text = "Enter \"/help\" for the list of commands and syntax attributes."
 	control.add_child(line_edit)
 	line_edit.text_submitted.connect(on_text_entered)
 	line_edit.text_changed.connect(on_line_edit_text_changed)
@@ -335,7 +335,7 @@ func on_text_entered(new_text : String) -> void:
 			console_commands[text_command].function.callv(arguments)
 		else:
 			console_unknown_command.emit(text_command)
-			print_error("Command not found.")
+			print_error("Command not found in syntax.")
 
 
 func on_line_edit_text_changed(new_text : String) -> void:
