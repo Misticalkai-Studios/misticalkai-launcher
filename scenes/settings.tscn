@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx7n5qkul2r85"]
+[gd_scene load_steps=7 format=3 uid="uid://bx7n5qkul2r85"]
 
-[ext_resource type="Script" path="res://scenes/settings.gd" id="1_3tcu2"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_3tcu2"]
 [ext_resource type="Theme" uid="uid://2obore3x40q6" path="res://theme/background.tres" id="1_h536v"]
 [ext_resource type="Theme" uid="uid://gaf2d72fdycj" path="res://theme/accent_header.tres" id="2_u345j"]
+[ext_resource type="Theme" uid="uid://d0ael075a82xo" path="res://theme/exit_button.tres" id="4_40uqq"]
+[ext_resource type="Texture2D" uid="uid://u3xbtem6reux" path="res://assets/Close_SM.png" id="5_08oyi"]
+[ext_resource type="Theme" uid="uid://canpw8e8e7yrt" path="res://theme/accent_menu.tres" id="6_ltt48"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -14,11 +17,35 @@ grow_vertical = 2
 script = ExtResource("1_3tcu2")
 
 [node name="Background" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 theme = ExtResource("1_h536v")
 
 [node name="AccentHeader" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 64.0
 theme = ExtResource("2_u345j")
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1104.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 48.0
+theme = ExtResource("4_40uqq")
+icon = ExtResource("5_08oyi")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AccentMenu" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 576.0
+theme = ExtResource("6_ltt48")
+
+[connection signal="gui_input" from="AccentHeader" to="." method="_on_accent_header_gui_input"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
