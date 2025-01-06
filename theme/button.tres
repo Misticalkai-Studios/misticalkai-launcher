@@ -7098,7 +7098,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 corner_detail = 15
 
-[sub_resource type="Image" id="Image_e6ntl"]
+[sub_resource type="Image" id="Image_722bd"]
 data = {
 "data": PackedByteArray("////AP///wr///8s////PP///0D///9A////QP///0D///9A////QP///zz///8r////Cf///wD///8K////PP///0D///9A////QP///0D///9A////QP///0D///9A////QP///0D///88////Cf///yv///9A////QP///0D///9A////QP///0D///9A////QP///0D///9A////QP///0D///8r////PP///0D///8Q////FP///0D///9A////EP///xT///9A////QP///xD///8U////QP///zz///88////QP///xD///8R////QP///0D///8Q////Ef///0D///9A////EP///xH///9A////O////yv///9A////QP///0D///9A////QP///0D///9A////QP///0D///9A////QP///0D///8q////Cf///zz///9A////QP///0D///9A////QP///0D///9A////QP///0D///9A////O////wj///8A////Cf///yv///88////QP///0D///9A////QP///0D///9A////PP///yv///8J////AA=="),
 "format": "RGBA8",
@@ -7108,7 +7108,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_5jx1m"]
-image = SubResource("Image_e6ntl")
+image = SubResource("Image_722bd")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crjkr"]
 

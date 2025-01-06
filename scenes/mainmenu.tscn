@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3cghictte8em"]
+[gd_scene load_steps=17 format=3 uid="uid://d3cghictte8em"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_xxkty"]
 [ext_resource type="Theme" uid="uid://2obore3x40q6" path="res://theme/background.tres" id="2_dche8"]
@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://u3xbtem6reux" path="res://assets/Close_SM.png" id="7_spfif"]
 [ext_resource type="Theme" uid="uid://b3eb1oilq2tjs" path="res://theme/minimize_button.tres" id="8_2o4pc"]
 [ext_resource type="Texture2D" uid="uid://d0w842sdeddry" path="res://assets/Remove_Minus.png" id="9_e4vxq"]
+[ext_resource type="Theme" uid="uid://wvh08kyxx0fq" path="res://theme/profile_button.tres" id="10_pv455"]
+[ext_resource type="Texture2D" uid="uid://dkagfj4smhdid" path="res://assets/User_Circle.png" id="11_6ak3d"]
+[ext_resource type="Theme" uid="uid://so38sjm4lswl" path="res://theme/link_button.tres" id="12_p23vb"]
+[ext_resource type="Texture2D" uid="uid://cspbccgne02vn" path="res://assets/Globe.png" id="13_7spjg"]
+[ext_resource type="Texture2D" uid="uid://bt8manaapg826" path="res://assets/Settings.png" id="14_t2aow"]
+[ext_resource type="Theme" uid="uid://crh4ey2abxcwy" path="res://theme/settings_button.tres" id="14_vgm6p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nqinp"]
 font_size = 10
@@ -92,6 +98,41 @@ label_settings = SubResource("LabelSettings_nqinp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="profile" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 192.0
+offset_bottom = 48.0
+theme = ExtResource("10_pv455")
+text = "Login/Signup"
+icon = ExtResource("11_6ak3d")
+expand_icon = true
+
+[node name="home_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 16.0
+offset_right = 312.0
+offset_bottom = 48.0
+theme = ExtResource("12_p23vb")
+text = "Website"
+icon = ExtResource("13_7spjg")
+alignment = 0
+expand_icon = true
+
+[node name="settings_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 16.0
+offset_right = 1056.0
+offset_bottom = 48.0
+theme = ExtResource("14_vgm6p")
+icon = ExtResource("14_t2aow")
+expand_icon = true
+
 [connection signal="gui_input" from="AccentHeader" to="." method="_on_accent_gui_input"]
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="minimize_button" to="." method="_on_minimize_button_pressed"]
+[connection signal="pressed" from="home_button" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="settings_button" to="." method="_on_settings_button_pressed"]

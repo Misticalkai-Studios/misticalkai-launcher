@@ -22,7 +22,7 @@ boot_splash/minimum_display_time=10
 
 [autoload]
 
-Console="*res://addons/console/console.gd"
+Console="*res://features/console/console.gd"
 
 [debug]
 

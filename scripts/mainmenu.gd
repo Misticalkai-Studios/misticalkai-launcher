@@ -21,3 +21,9 @@ func _on_accent_gui_input(event: InputEvent) -> void:
 		var delta := mouse_position - mouse_start
 		get_window().position += Vector2i(delta)
 		mouse_start = mouse_position
+		
+func _on_home_button_pressed() -> void:
+	OS.shell_open("https://misticalkai.com")
+
+func _on_settings_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/settings.tscn")

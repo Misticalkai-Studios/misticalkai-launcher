@@ -78,11 +78,11 @@ func _enter_tree() -> void:
 	rich_label.anchor_bottom = 0.5
 	rich_label.add_theme_stylebox_override("normal", style)
 	control.add_child(rich_label)
-	rich_label.append_text("Development console.\n")
+	rich_label.append_text("Misticalkai Studio's Dev Console.\n")
 	line_edit.anchor_top = 0.5
 	line_edit.anchor_right = 1.0
 	line_edit.anchor_bottom = 0.5
-	line_edit.placeholder_text = "Enter \"help\" for instructions"
+	line_edit.placeholder_text = "Enter \"/help\" for instructions"
 	control.add_child(line_edit)
 	line_edit.text_submitted.connect(on_text_entered)
 	line_edit.text_changed.connect(on_line_edit_text_changed)
@@ -102,15 +102,13 @@ func _exit_tree() -> void:
 
 
 func _ready() -> void:
-	add_command("quit", quit, 0, 0, "Exits the launcher.")
-	add_command("exit", quit, 0, 0, "Exits the launcher.")
-	add_command("clear", clear, 0, 0, "Clears the text on the console.")
-	add_command("delete_history", delete_history, 0, 0, "Deletes the history of previously entered commands.")
-	add_command("help", help, 0, 0, "Displays instructions on how to use the console.")
-	add_command("commands_list", commands_list, 0, 0, "Lists all commands and their descriptions.")
-	add_command("commands", commands, 0, 0, "Lists commands with no descriptions.")
-	add_command("calc", calculate, ["mathematical expression to evaluate"], 0, "Evaluates the math passed in for quick arithmetic.")
-
+	add_command("/quit", quit, 0, 0, "Exits the launcher.")
+	add_command("/exit", quit, 0, 0, "Exits the launcher.")
+	add_command("/clear", clear, 0, 0, "Clears the text on the console.")
+	add_command("/delete_history", delete_history, 0, 0, "Deletes the history of previously entered commands.")
+	add_command("/help", help, 0, 0, "Displays instructions on how to use the console.")
+	add_command("/commands_list", commands_list, 0, 0, "Lists all commands and their descriptions.")
+	add_command("/commands", commands, 0, 0, "Lists commands with no descriptions.")
 
 func _input(event : InputEvent) -> void:
 	if (event is InputEventKey):
@@ -360,12 +358,11 @@ func delete_history() -> void:
 
 func help() -> void:
 	rich_label.append_text("	Built in commands:
-		[color=light_green]calc[/color]: Calculates a given expresion
-		[color=light_green]clear[/color]: Clears the registry view
-		[color=light_green]commands[/color]: Shows a reduced list of all the currently registered commands
-		[color=light_green]commands_list[/color]: Shows a detailed list of all the currently registered commands
-		[color=light_green]delete_hystory[/color]: Deletes the commands history
-		[color=light_green]quit[/color]: Exits the launcher
+		[color=light_green]/clear[/color]: Clears the registry view
+		[color=light_green]/commands[/color]: Shows a reduced list of all the currently registered commands
+		[color=light_green]/commands_list[/color]: Shows a detailed list of all the currently registered commands
+		[color=light_green]/delete_hystory[/color]: Deletes the commands history
+		[color=light_green]/quit[/color]: Exits the launcher
 	Controls:
 		[color=light_blue]Up[/color] and [color=light_blue]Down[/color] arrow keys to navigate commands history
 		[color=light_blue]PageUp[/color] and [color=light_blue]PageDown[/color] to scroll registry
